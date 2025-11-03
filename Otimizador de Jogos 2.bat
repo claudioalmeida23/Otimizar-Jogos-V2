@@ -1,83 +1,182 @@
 @echo off
-title 🚀 Otimizador de Jogos - V2 by Claudio Almeida
+title 🚀 Otimizador de Jogos - V6 TURBO Por Claudio Almeida
 color 0A
+setlocal enabledelayedexpansion
+
+:: =====================================================
+:: CONFIGURAÇÕES INICIAIS
+:: =====================================================
+set "LOGFILE=%~dp0Relatorio_Otimizacao.txt"
+echo ===================================================== > "%LOGFILE%"
+echo 🚀 Otimizador de Jogos - V6 TURBO >> "%LOGFILE%"
+echo Data de execução: %date% - %time% >> "%LOGFILE%"
+echo ===================================================== >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
+
+:MENU
+cls
 echo =====================================================
-echo     🔧 Otimizador de Jogos do Windows - V2
+echo 🚀 OTIMIZADOR DE JOGOS - V6 TURBO
 echo =====================================================
-echo.
-echo 🕐 Iniciando tarefas de manutenção e desempenho...
-echo.
+echo [1] 🧹 Limpeza de arquivos temporarios e cache
+echo [2] 🔧 Reparo do sistema (SFC / DISM)
+echo [3] 🌐 Otimizar rede e firewall
+echo [4] ⚙️ Reiniciar servicos essenciais
+echo [5] 🔋 Ativar plano de alto desempenho
+echo [6] 🧩 Verificar discos (CHKDSK)
+echo [7] 💥 Executar todas as otimizacoes
+echo [0] ❌ Sair
+echo =====================================================
+set /p opcao="Escolha uma opção: "
 
-:: 1️⃣ Verificar e corrigir arquivos do sistema
-echo [1/9] Verificando integridade do Windows...
-sfc /scannow
-echo.
+if "%opcao%"=="1" goto LIMPEZA
+if "%opcao%"=="2" goto REPARO
+if "%opcao%"=="3" goto REDE
+if "%opcao%"=="4" goto SERVICOS
+if "%opcao%"=="5" goto DESEMPENHO
+if "%opcao%"=="6" goto CHKDSK
+if "%opcao%"=="7" goto COMPLETO
+if "%opcao%"=="0" goto SAIR
+goto MENU
 
-:: 2️⃣ Reparo da imagem do sistema
-echo [2/9] Reparo de componentes do sistema...
-DISM /Online /Cleanup-Image /RestoreHealth
-echo.
+:: =====================================================
+:: OPÇÃO 1 - LIMPEZA
+:: =====================================================
+:LIMPEZA
+cls
+echo =====================================================
+echo 🧹 LIMPEZA DE ARQUIVOS TEMPORARIOS E CACHE
+echo =====================================================
+echo Iniciando limpeza... >> "%LOGFILE%"
+echo [%time%] Limpando pastas temporárias... >> "%LOGFILE%"
 
-:: 3️⃣ Corrigir disco D:
-echo [3/9] Verificando disco D: (aguarde)...
-chkdsk D: /f /r
-echo.
-
-:: 4️⃣ Corrigir permissões no disco D:
-echo [4/9] Corrigindo permissões no disco D:...
-takeown /f D:\ /r /d y
-icacls D:\ /grant Administradores:F /t
-icacls D:\ /grant Everyone:F /t
-echo.
-
-:: 5️⃣ Reiniciar serviços essenciais
-echo [5/9] Reiniciando serviços importantes...
-net stop wuauserv >nul
-net start wuauserv >nul
-net stop bits >nul
-net start bits >nul
-net stop cryptsvc >nul
-net start cryptsvc >nul
-echo Serviços reiniciados com sucesso.
-echo.
-
-:: 6️⃣ Limpar caches e arquivos temporários
-echo [6/9] Limpando caches e arquivos temporários...
-del /s /q "%temp%\*.*" >nul
-del /s /q "C:\Windows\Temp\*.*" >nul
-del /s /q "C:\Windows\Prefetch\*.*" >nul
-cleanmgr /sagerun:1
-echo Limpeza concluída.
-echo.
-
-:: 7️⃣ Otimizar rede e ping
-echo [7/9] Otimizando rede para jogos online...
-ipconfig /flushdns
-netsh int ip reset
-netsh winsock reset
-netsh advfirewall reset
-echo Rede otimizada e DNS limpo.
-echo.
-
-:: 8️⃣ Otimizar cache gráfico (DirectX e shaders)
-echo [8/9] Limpando cache gráfico e shaders...
+del /s /q "%temp%\*.*" >nul 2>&1
+del /s /q "C:\Windows\Temp\*.*" >nul 2>&1
+del /s /q "C:\Windows\Prefetch\*.*" >nul 2>&1
 del /s /q "%LOCALAPPDATA%\NVIDIA\DXCache\*.*" >nul 2>&1
 del /s /q "%LOCALAPPDATA%\NVIDIA\GLCache\*.*" >nul 2>&1
 del /s /q "%LOCALAPPDATA%\D3DSCache\*.*" >nul 2>&1
-echo Cache gráfico limpo.
-echo.
 
-:: 9️⃣ Definir prioridade máxima para jogos
-echo [9/9] Ajustando prioridade do sistema para desempenho...
-powercfg -setactive SCHEME_MIN
-wmic process where name="explorer.exe" CALL setpriority "128"
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v CsEnabled /t REG_DWORD /d 0 /f
-echo Prioridade ajustada e modo desempenho ativado.
-echo.
+cleanmgr /sagerun:1
+echo [%time%] Limpeza concluida. >> "%LOGFILE%"
+echo ✅ Limpeza concluida!
+pause
+goto MENU
 
+:: =====================================================
+:: OPÇÃO 2 - REPARO DO SISTEMA
+:: =====================================================
+:REPARO
+cls
 echo =====================================================
-echo ✅ Otimização completa!
-echo 🕹️ Seu sistema está pronto para rodar jogos no máximo!
+echo 🔧 REPARO DO SISTEMA (SFC / DISM)
+echo =====================================================
+echo [%time%] Iniciando SFC e DISM... >> "%LOGFILE%"
+echo Executando SFC /scannow...
+sfc /scannow >> "%LOGFILE%"
+echo Executando DISM /Online /Cleanup-Image /RestoreHealth...
+DISM /Online /Cleanup-Image /RestoreHealth >> "%LOGFILE%"
+echo [%time%] Reparo concluído. >> "%LOGFILE%"
+echo ✅ Reparo concluído!
+pause
+goto MENU
+
+:: =====================================================
+:: OPÇÃO 3 - OTIMIZAR REDE
+:: =====================================================
+:REDE
+cls
+echo =====================================================
+echo 🌐 OTIMIZAÇÃO DE REDE E FIREWALL
+echo =====================================================
+echo [%time%] Otimizando rede... >> "%LOGFILE%"
+ipconfig /flushdns >> "%LOGFILE%"
+netsh int ip reset >> "%LOGFILE%"
+netsh winsock reset >> "%LOGFILE%"
+netsh advfirewall reset >> "%LOGFILE%"
+echo [%time%] Rede otimizada com sucesso. >> "%LOGFILE%"
+echo ✅ Rede otimizada!
+pause
+goto MENU
+
+:: =====================================================
+:: OPÇÃO 4 - SERVIÇOS
+:: =====================================================
+:SERVICOS
+cls
+echo =====================================================
+echo ⚙️ REINICIANDO SERVICOS ESSENCIAIS
+echo =====================================================
+echo [%time%] Reiniciando serviços... >> "%LOGFILE%"
+for %%S in (wuauserv bits cryptsvc) do (
+    net stop %%S >> "%LOGFILE%" 2>&1
+    net start %%S >> "%LOGFILE%" 2>&1
+)
+echo [%time%] Servicos reiniciados. >> "%LOGFILE%"
+echo ✅ Servicos reiniciados!
+pause
+goto MENU
+
+:: =====================================================
+:: OPÇÃO 5 - DESEMPENHO
+:: =====================================================
+:DESEMPENHO
+cls
+echo =====================================================
+echo 🔋 ATIVANDO PLANO DE ALTO DESEMPENHO
+echo =====================================================
+echo [%time%] Alterando plano de energia... >> "%LOGFILE%"
+powercfg -setactive SCHEME_MIN
+wmic process where name="explorer.exe" CALL setpriority "128" >nul
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v CsEnabled /t REG_DWORD /d 0 /f >nul
+echo [%time%] Plano de energia otimizado. >> "%LOGFILE%"
+echo ✅ Alto desempenho ativado!
+pause
+goto MENU
+
+:: =====================================================
+:: OPÇÃO 6 - CHKDSK
+:: =====================================================
+:CHKDSK
+cls
+echo =====================================================
+echo 💽 VERIFICAÇÃO DE DISCOS (CHKDSK)
+echo =====================================================
+for /f "tokens=1" %%i in ('wmic logicaldisk where "drivetype=3" get deviceid ^| find ":"') do (
+    echo [%time%] Verificando %%i... >> "%LOGFILE%"
+    chkdsk %%i >> "%LOGFILE%"
+)
+echo [%time%] Verificacao de disco concluida. >> "%LOGFILE%"
+echo ✅ Verificacao concluida!
+pause
+goto MENU
+
+:: =====================================================
+:: OPÇÃO 7 - COMPLETO
+:: =====================================================
+:COMPLETO
+cls
+echo =====================================================
+echo 💥 EXECUTANDO TODAS AS OTIMIZAÇÕES
+echo =====================================================
+call :LIMPEZA
+call :REPARO
+call :REDE
+call :SERVICOS
+call :DESEMPENHO
+call :CHKDSK
+goto MENU
+
+:: =====================================================
+:: SAIR
+:: =====================================================
+:SAIR
+echo =====================================================
+echo 📝 Relatorio salvo em:
+echo "%LOGFILE%"
+echo =====================================================
+echo ✅ Todas as ações foram registradas.
+echo Obrigado por usar o Otimizador de Jogos - V6 TURBO!
 echo =====================================================
 pause
 exit
