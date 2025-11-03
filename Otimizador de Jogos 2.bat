@@ -18,16 +18,16 @@ echo [2/9] Reparo de componentes do sistema...
 DISM /Online /Cleanup-Image /RestoreHealth
 echo.
 
-:: 3️⃣ Corrigir disco D:
-echo [3/9] Verificando disco D: (aguarde)...
-chkdsk D: /f /r
+:: 3️⃣ Verificar e corrigir disco C:
+echo [3/9] Verificando disco C: (aguarde)...
+chkdsk C: /f /r
 echo.
 
-:: 4️⃣ Corrigir permissões no disco D:
-echo [4/9] Corrigindo permissões no disco D:...
-takeown /f D:\ /r /d y
-icacls D:\ /grant Administradores:F /t
-icacls D:\ /grant Everyone:F /t
+:: 4️⃣ Corrigir permissões no disco C:
+echo [4/9] Corrigindo permissões no disco C:...
+takeown /f C:\ /r /d y
+icacls C:\ /grant Administradores:F /t
+icacls C:\ /grant Everyone:F /t
 echo.
 
 :: 5️⃣ Reiniciar serviços essenciais
@@ -43,9 +43,9 @@ echo.
 
 :: 6️⃣ Limpar caches e arquivos temporários
 echo [6/9] Limpando caches e arquivos temporários...
-del /s /q "%temp%\*.*" >nul
-del /s /q "C:\Windows\Temp\*.*" >nul
-del /s /q "C:\Windows\Prefetch\*.*" >nul
+del /s /q "%temp%\*.*" >nul 2>&1
+del /s /q "C:\Windows\Temp\*.*" >nul 2>&1
+del /s /q "C:\Windows\Prefetch\*.*" >nul 2>&1
 cleanmgr /sagerun:1
 echo Limpeza concluída.
 echo.
@@ -53,9 +53,9 @@ echo.
 :: 7️⃣ Otimizar rede e ping
 echo [7/9] Otimizando rede para jogos online...
 ipconfig /flushdns
-netsh int ip reset
-netsh winsock reset
-netsh advfirewall reset
+netsh int ip reset >nul
+netsh winsock reset >nul
+netsh advfirewall reset >nul
 echo Rede otimizada e DNS limpo.
 echo.
 
@@ -70,7 +70,7 @@ echo.
 :: 9️⃣ Definir prioridade máxima para jogos
 echo [9/9] Ajustando prioridade do sistema para desempenho...
 powercfg -setactive SCHEME_MIN
-wmic process where name="explorer.exe" CALL setpriority "128"
+wmic process where name="explorer.exe" CALL setpriority "128" >nul
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v CsEnabled /t REG_DWORD /d 0 /f
 echo Prioridade ajustada e modo desempenho ativado.
 echo.
