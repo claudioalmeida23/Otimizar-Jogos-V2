@@ -1,5 +1,5 @@
 ═══════════════════════════════════════════════════════════════════════
-     ⚡ OTIMIZADOR DE JOGOS V2 - by Claudio Almeida (Nick gamer: Anarokk) ⚡
+     ⚡ OTIMIZADOR DE JOGOS V2-Por Claudio Almeida (Nick gamer: Anarokk) ⚡
 ═══════════════════════════════════════════════════════════════════════
 
 📅 Versão: 2.0  |  Compatível com: Windows 10 / 11 (32 e 64 bits)
