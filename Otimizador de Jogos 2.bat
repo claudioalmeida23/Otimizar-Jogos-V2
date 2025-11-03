@@ -5,7 +5,7 @@ echo =====================================================
 echo     🔧 Otimizador de Jogos do Windows - V2
 echo =====================================================
 echo.
-echo 🕐 Iniciando tarefas de manutenção e desempenho...
+echo 🕐 Iniciando tarefas de manutencao e desempenho...
 echo.
 
 :: 1️⃣ Verificar e corrigir arquivos do sistema
@@ -23,15 +23,15 @@ echo [3/9] Verificando disco C: (aguarde)...
 chkdsk C: /f /r
 echo.
 
-:: 4️⃣ Corrigir permissões no disco C:
+:: 4️⃣ Corrigir permissoes no disco C:
 echo [4/9] Corrigindo permissões no disco C:...
 takeown /f C:\ /r /d y
 icacls C:\ /grant Administradores:F /t
 icacls C:\ /grant Everyone:F /t
 echo.
 
-:: 5️⃣ Reiniciar serviços essenciais
-echo [5/9] Reiniciando serviços importantes...
+:: 5️⃣ Reiniciar servicos essenciais
+echo [5/9] Reiniciando servicos importantes...
 net stop wuauserv >nul
 net start wuauserv >nul
 net stop bits >nul
@@ -41,13 +41,13 @@ net start cryptsvc >nul
 echo Serviços reiniciados com sucesso.
 echo.
 
-:: 6️⃣ Limpar caches e arquivos temporários
-echo [6/9] Limpando caches e arquivos temporários...
+:: 6️⃣ Limpar caches e arquivos temporarios
+echo [6/9] Limpando caches e arquivos temporarios...
 del /s /q "%temp%\*.*" >nul 2>&1
 del /s /q "C:\Windows\Temp\*.*" >nul 2>&1
 del /s /q "C:\Windows\Prefetch\*.*" >nul 2>&1
 cleanmgr /sagerun:1
-echo Limpeza concluída.
+echo Limpeza concluida.
 echo.
 
 :: 7️⃣ Otimizar rede e ping
@@ -59,15 +59,15 @@ netsh advfirewall reset >nul
 echo Rede otimizada e DNS limpo.
 echo.
 
-:: 8️⃣ Otimizar cache gráfico (DirectX e shaders)
-echo [8/9] Limpando cache gráfico e shaders...
+:: 8️⃣ Otimizar cache grafico (DirectX e shaders)
+echo [8/9] Limpando cache grafico e shaders...
 del /s /q "%LOCALAPPDATA%\NVIDIA\DXCache\*.*" >nul 2>&1
 del /s /q "%LOCALAPPDATA%\NVIDIA\GLCache\*.*" >nul 2>&1
 del /s /q "%LOCALAPPDATA%\D3DSCache\*.*" >nul 2>&1
-echo Cache gráfico limpo.
+echo Cache grafico limpo.
 echo.
 
-:: 9️⃣ Definir prioridade máxima para jogos
+:: 9️⃣ Definir prioridade maxima para jogos
 echo [9/9] Ajustando prioridade do sistema para desempenho...
 powercfg -setactive SCHEME_MIN
 wmic process where name="explorer.exe" CALL setpriority "128" >nul
@@ -76,8 +76,9 @@ echo Prioridade ajustada e modo desempenho ativado.
 echo.
 
 echo =====================================================
-echo ✅ Otimização completa!
-echo 🕹️ Seu sistema está pronto para rodar jogos no máximo!
+echo ✅ Otimizacao completa!
+echo 🕹️ Seu sistema esta pronto para rodar jogos no maximo!
 echo =====================================================
 pause
 exit
+
