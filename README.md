@@ -1,55 +1,159 @@
-# 🚀 Otimizador de Jogos - V6 TURBO Por Claudio Almeida
+🚀 Otimizador de Jogos Turbo-V9
 
-> 🧭 **Versão com menu interativo + log automático**  
-> 🧹 Limpeza, 🔧 reparo, 🌐 otimização de rede e 🔋 modo de alto desempenho — tudo em um só script!  
-> 💾 100% seguro e compatível com Windows 10/11.
+Ferramenta em Batch (.bat) para Windows 10 e 11, focada em PCs fracos e gamers casuais, que aplica otimizações reais no sistema operacional para reduzir gargalos, melhorar responsividade e deixar o Windows mais leve para jogos e uso diário.
 
----
+⚠️ Este projeto é honesto: ele não cria FPS do nada, não altera hardware e não faz milagres.
 
-## ⚙️ Funções principais
+📌 Criador
 
-| Função | Descrição |
-|--------|------------|
-| 🧹 **Limpeza de sistema** | Remove arquivos temporários, caches do Windows, DirectX e NVIDIA |
-| 🔧 **Reparo do sistema** | Executa `SFC /scannow` e `DISM` para corrigir erros |
-| 🌐 **Otimização de rede** | Reseta Winsock, IP e firewall, limpando DNS e conexões |
-| ⚙️ **Reinício de serviços** | Reinicia `BITS`, `Wuauserv` e `Cryptsvc` |
-| 🔋 **Modo alto desempenho** | Ativa plano de energia máximo para jogos |
-| 💽 **Verificação de discos** | Executa CHKDSK em modo leitura (sem travar) |
-| 📁 **Gera relatório automático** | Salva log completo em `Relatorio_Otimizacao.txt` |
+Claudio Almeida
+Projeto: Turbo Performance Tools
 
----
+🎯 Objetivo do Projeto
 
-## 🧭 Menu interativo
+O Turbo-V9 foi criado para:
+
+Reduzir processos e serviços desnecessários
+
+Ajustar configurações reais do Windows
+
+Melhorar tempo de resposta do sistema
+
+Ajudar PCs com hardware limitado a rodar melhor jogos leves e médios
+
+Ideal para:
+
+PCs com 4GB a 8GB de RAM
+
+HD ou SSD simples
+
+Usuários que querem mais fluidez sem riscos
+
+🧩 Funcionalidades
+🔍 Diagnóstico do Sistema
+
+Detecta versão do Windows
+
+Identifica arquitetura (32/64 bits)
+
+Analisa quantidade de RAM
+
+Exibe uma análise honesta de ganho esperado
+
+⚙️ Otimização de Performance
+
+Dois modos disponíveis:
+
+🟢 Modo Seguro (Recomendado)
+
+Mantém serviços críticos
+
+Ajusta energia e multimídia
+
+Ideal para uso diário
+
+🔴 Modo Bruto (Avançado)
+
+Desativa serviços pesados (SysMain, WSearch, Telemetria)
+
+Foco máximo em performance
+
+Recomendado para usuários experientes
+
+✔️ Cria Ponto de Restauração automaticamente antes de aplicar mudanças.
+
+🧹 Limpeza Segura
+
+Cache temporário do usuário
+
+Cache do sistema
+
+DNS
+
+Lixeira do Windows
+
+🎨 Performance Visual
+
+Reduz animações
+
+Acelera menus
+
+Abre painel nativo do Windows para ajuste visual fino
+
+🔄 Reiniciar Explorer
+
+Reinicia a shell do Windows sem reboot
+
+Útil em travamentos ou lentidão
+
+♻️ Reverter Tudo
+
+Restaura serviços padrão
+
+Remove ajustes de multimídia
+
+Retorna plano de energia equilibrado
+
+Segurança total para testes
+
+🛡️ Transparência e Limitações
+
+✔️ O que este otimizador faz:
+
+Reduz gargalos do Windows
+
+Libera recursos do sistema
+
+Melhora responsividade geral
+
+❌ O que ele não faz:
+
+Não aumenta FPS além do limite do hardware
+
+Não substitui upgrade de RAM ou SSD
+
+Não modifica arquivos de jogos
+
+📋 Requisitos
+
+Windows 10 ou Windows 11
+
+Executar como Administrador
+
+Conhecimento básico de Windows (modo bruto)
+
+▶️ Como Usar
+
+Baixe o arquivo .bat
+
+Clique com o botão direito
+
+Executar como administrador
+
+Escolha as opções no menu
+
+📁 Log
+
+O script gera automaticamente um arquivo:
+
+otimizador_log.txt
 
 
+Com registro das ações realizadas.
 
+📜 Licença
 
-═══════════════════════════════════════════════════════════════════════
+Uso livre para fins educacionais e pessoais.
+Não revenda sem autorização do autor.
 
-## Aviso de Segurança — Leia antes de executar
+⭐ Considerações Finais
 
-Este repositório contém scripts de otimização e manutenção para Windows (.bat). **Importante**:
+Este projeto foi criado com foco em:
 
-- **O que o script faz (exemplos):**
-  - Executa `chkdsk`, `sfc /scannow`, `DISM /Online /Cleanup-Image /RestoreHealth`.
-  - Reinicia serviços do Windows e limpa caches temporários.
-  - **Altera propriedade/permissões** de arquivos e pastas (`takeown`, `icacls`).
+Simplicidade
 
-- **Por que antivírus/Windows Defender pode alertar:**
-  - Comandos que tomam posse de arquivos (`takeown`) ou concedem permissões amplas (`icacls ... Everyone:F`) são técnicas também usadas por malware para dominar arquivos do usuário. Portanto, a proteção “Acesso controlado a pastas” ou o antivírus podem bloquear a execução ou exibir avisos. Isso **não significa automaticamente** que o script é malicioso — é uma medida preventiva do sistema.
+Segurança
 
-- **Riscos e recomendações:**
-  - Comandos que concedem permissões amplas reduzem a segurança do sistema. **Evite** `icacls ... Everyone:F` a menos que você saiba exatamente o que faz.
-  - Faça backup dos seus dados antes de executar qualquer script que altere permissões ou faça reparos de disco.
-  - Leia o conteúdo do `.bat` linha a linha. Não execute scripts de fontes não confiáveis.
+Resultado real
 
-- **Se você confia no script e precisa executá-lo:**
-  - Execute o prompt de comando como Administrador.
-  - Se receber bloqueio do Windows Defender (Acesso controlado a pastas), siga o caminho nas configurações do Windows para **permitir o app** — **somente** se tiver certeza da procedência do script.
-  - Melhor prática: remova as linhas que concedem permissões globais (ex.: `icacls ... Everyone:F`) e mantenha apenas operações seguras (CHKDSK, SFC, DISM, limpeza de temporários).
-
-- **Sugestão do autor:**  
-  - Este repositório é fornecido **"como está"** para uso educacional/pessoal. Não há intenção maliciosa. Se desejar, entre em contato via Issues para pedir uma versão que **não altere permissões** e minimize avisos do antivírus.
-
-
+Se você tem um PC fraco, o Turbo-V9 ajuda o Windows a atrapalhar menos.
