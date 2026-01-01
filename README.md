@@ -8,7 +8,7 @@ Ferramenta em Batch (.bat) para Windows 10 e 11, focada em PCs fracos e gamers c
 
 Claudio Almeida
 Projeto: Turbo Performance Tools
-
+(Seja Ético)
 🎯 Objetivo do Projeto
 
 O Turbo-V9 foi criado para:
