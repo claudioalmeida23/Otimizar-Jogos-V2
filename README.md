@@ -1,159 +1,119 @@
-🚀 Otimizador de Jogos Turbo-V9
+🛠️ Otimizador de Jogos Turbo-V10.1
 
-Ferramenta em Batch (.bat) para Windows 10 e 11, focada em PCs fracos e gamers casuais, que aplica otimizações reais no sistema operacional para reduzir gargalos, melhorar responsividade e deixar o Windows mais leve para jogos e uso diário.
-
-⚠️ Este projeto é honesto: ele não cria FPS do nada, não altera hardware e não faz milagres.
-
-📌 Criador
-
-Claudio Almeida
+Criador: Claudio Almeida
 Projeto: Turbo Performance Tools
-(Seja Ético)
-🎯 Objetivo do Projeto
+Compatibilidade: Windows 10 e Windows 11
+Público-alvo: PCs fracos, intermediários e gamers casuais
 
-O Turbo-V9 foi criado para:
+📌 O que é o Turbo-V10.1
 
-Reduzir processos e serviços desnecessários
+O Otimizador de Jogos Turbo-V10.1 é uma ferramenta em Batch Script que atua na organização, limpeza e ajuste do Windows, com foco em reduzir gargalos comuns do sistema operacional que afetam a experiência geral durante o uso de jogos e aplicativos.
 
-Ajustar configurações reais do Windows
+Ele não altera jogos, não injeta código, não faz overclock e não modifica drivers gráficos.
 
-Melhorar tempo de resposta do sistema
+⚙️ O que o Turbo-V10.1 FAZ
+🔍 Diagnóstico do sistema
 
-Ajudar PCs com hardware limitado a rodar melhor jogos leves e médios
+Identifica versão do Windows
 
-Ideal para:
+Arquitetura (32/64 bits)
 
-PCs com 4GB a 8GB de RAM
+Quantidade de memória RAM
 
-HD ou SSD simples
+Exibe uma análise honesta do cenário do PC
 
-Usuários que querem mais fluidez sem riscos
+⚡ Otimização do Windows (Modo Seguro ou Bruto)
 
-🧩 Funcionalidades
-🔍 Diagnóstico do Sistema
+Ativa plano de energia Alto Desempenho
 
-Detecta versão do Windows
+Ajusta parâmetros de multimídia do Windows
 
-Identifica arquitetura (32/64 bits)
+Reduz limitações internas de rede do sistema
 
-Analisa quantidade de RAM
+Opcionalmente desativa serviços não essenciais (modo bruto)
 
-Exibe uma análise honesta de ganho esperado
+Cria ponto de restauração antes das alterações
 
-⚙️ Otimização de Performance
+🧹 Limpeza segura e avançada
 
-Dois modos disponíveis:
+Remove arquivos temporários do usuário
 
-🟢 Modo Seguro (Recomendado)
+Limpa pastas temporárias do Windows
 
-Mantém serviços críticos
+Limpa cache de rede (DNS)
 
-Ajusta energia e multimídia
+Remove lixeira do sistema
 
-Ideal para uso diário
+🛠️ Manutenção e integridade do sistema
 
-🔴 Modo Bruto (Avançado)
+Verificação e reparo de arquivos do Windows (SFC)
 
-Desativa serviços pesados (SysMain, WSearch, Telemetria)
+Reparo da imagem do sistema (DISM)
 
-Foco máximo em performance
+Verificação da integridade do Windows
 
-Recomendado para usuários experientes
+Verificação de disco (CHKDSK)
 
-✔️ Cria Ponto de Restauração automaticamente antes de aplicar mudanças.
+Reset e ajuste básico de rede e firewall
 
-🧹 Limpeza Segura
+🎨 Ajustes visuais
 
-Cache temporário do usuário
+Reduz efeitos visuais do Windows
 
-Cache do sistema
+Diminui atrasos de menus
 
-DNS
+Acesso rápido às configurações de desempenho
 
-Lixeira do Windows
+🔄 Reversão total
 
-🎨 Performance Visual
+Restaura serviços desativados
 
-Reduz animações
+Remove ajustes aplicados
 
-Acelera menus
+Retorna plano de energia ao padrão
 
-Abre painel nativo do Windows para ajuste visual fino
+Mantém o sistema funcional e estável
 
-🔄 Reiniciar Explorer
+🚫 O que o Turbo-V10.1 NÃO FAZ
 
-Reinicia a shell do Windows sem reboot
+❌ Não cria FPS do nada
+❌ Não transforma PC fraco em PC gamer
+❌ Não faz overclock de CPU, GPU ou RAM
+❌ Não modifica arquivos de jogos
+❌ Não altera drivers de vídeo
+❌ Não injeta DLL, mods ou cheats
+❌ Não burla limitações de hardware
 
-Útil em travamentos ou lentidão
+Se o jogo roda mal por limitação de CPU, GPU ou RAM, o Turbo-V9 não substitui hardware.
 
-♻️ Reverter Tudo
+🎯 O que você pode esperar na prática
 
-Restaura serviços padrão
+✔ Sistema mais limpo
+✔ Menos processos desnecessários em segundo plano
+✔ Menos travamentos causados por serviços do Windows
+✔ Inicialização e resposta do sistema mais estáveis
+✔ Ambiente mais consistente para jogos e apps
 
-Remove ajustes de multimídia
+👉 O ganho costuma ser estabilidade e fluidez, não números mágicos de FPS.
 
-Retorna plano de energia equilibrado
+🔐 Segurança e transparência
 
-Segurança total para testes
+Script 100% local
 
-🛡️ Transparência e Limitações
+Código aberto e auditável
 
-✔️ O que este otimizador faz:
+Nenhum dado é coletado
 
-Reduz gargalos do Windows
+Nenhuma conexão externa é realizada
 
-Libera recursos do sistema
+Todas as ações usam comandos nativos do Windows
 
-Melhora responsividade geral
+⚠️ Aviso importante
 
-❌ O que ele não faz:
+Este projeto é uma ferramenta auxiliar.
+Use por sua conta e risco, sempre como Administrador, e leia o código se desejar entender cada comando executado.
 
-Não aumenta FPS além do limite do hardware
-
-Não substitui upgrade de RAM ou SSD
-
-Não modifica arquivos de jogos
-
-📋 Requisitos
-
-Windows 10 ou Windows 11
-
-Executar como Administrador
-
-Conhecimento básico de Windows (modo bruto)
-
-▶️ Como Usar
-
-Baixe o arquivo .bat
-
-Clique com o botão direito
-
-Executar como administrador
-
-Escolha as opções no menu
-
-📁 Log
-
-O script gera automaticamente um arquivo:
-
-otimizador_log.txt
-
-
-Com registro das ações realizadas.
-
-📜 Licença
+📄 Licença
 
 Uso livre para fins educacionais e pessoais.
-Não revenda sem autorização do autor.
-
-⭐ Considerações Finais
-
-Este projeto foi criado com foco em:
-
-Simplicidade
-
-Segurança
-
-Resultado real
-
-Se você tem um PC fraco, o Turbo-V9 ajuda o Windows a atrapalhar menos.
+Venda, redistribuição comercial ou modificação sem créditos não recomendada.
