@@ -77,14 +77,20 @@ Mantém o sistema funcional e estável
 🚫 O que o Turbo-V10.1 NÃO FAZ
 
 ❌ Não cria FPS do nada
+
 ❌ Não transforma PC fraco em PC gamer
+
 ❌ Não faz overclock de CPU, GPU ou RAM
+
 ❌ Não modifica arquivos de jogos
+
 ❌ Não altera drivers de vídeo
+
 ❌ Não injeta DLL, mods ou cheats
+
 ❌ Não burla limitações de hardware
 
-Se o jogo roda mal por limitação de CPU, GPU ou RAM, o Turbo-V9 não substitui hardware.
+Se o jogo roda mal por limitação de CPU, GPU ou RAM, o Turbo-V10.1 não substitui hardware.
 
 🎯 O que você pode esperar na prática
 
