@@ -1,4 +1,4 @@
-# 🎮 Otimizador Turbo Gamer v12.00005
+# 🎮 Otimizador Turbo Gamer v13.00006
 
 Script em **Batch (.bat)** para Windows que centraliza, em um único menu interativo no terminal, um conjunto de rotinas de diagnóstico, otimização de desempenho, limpeza e manutenção voltadas para jogadores.
 
